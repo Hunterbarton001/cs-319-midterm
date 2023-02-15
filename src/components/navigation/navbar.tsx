@@ -4,6 +4,7 @@ import Image from "next/image";
 import SearchBar from "@/components/navigation/searchBar";
 import NavbarLink from "@/components/navigation/navbarLink";
 import Link from "next/link";
+import SpotifyLogin from "@/components/authentication/spotifyLogin";
 
 const Navbar = () => {
     return (
@@ -15,6 +16,7 @@ const Navbar = () => {
                 <div className={styles.navbarRightSide}>
                     <NavbarLink linkTo={'categories'} title={'Categories'}/>
                     <SearchBar/>
+                    <SpotifyLogin/>
                 </div>
 
             </nav>

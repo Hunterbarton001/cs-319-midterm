@@ -1,0 +1,21 @@
+.loginWrapper {
+    padding: 16px 10px 16px 0;
+}
+.loginButton {
+    border-radius: 30px;
+    border: none;
+    background-color: #189344;
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 5px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .loginWrapper {
+        padding: 20px 10px 20px 0;
+    }
+    .loginButton {
+        font-size: 10px;
+    }
+}
