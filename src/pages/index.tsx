@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Navbar from "@/components/navigation/navbar";
+import {useEffect, useState} from "react";
 
 export default function Home() {
+
   return (
     <>
       <Head>

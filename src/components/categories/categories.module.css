@@ -1,0 +1,32 @@
+.categoriesListItemContainer {
+    margin: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #189344;
+    border-radius: 20px;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+}
+
+.categoriesListItemImage {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+}
+
+.categoriesListItemTitle {
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    margin: 13px 0;
+}
+
+.categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 80%;
+}
