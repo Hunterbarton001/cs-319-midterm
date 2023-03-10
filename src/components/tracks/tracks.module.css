@@ -1,0 +1,72 @@
+.trackItem {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+    width: 80%;
+    background-color: #444444;
+    position: relative;
+}
+
+.trackItemImage {
+    height: 100px;
+    width: 100px;
+}
+
+.trackItemTitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    padding-right: 100px;
+}
+
+.trackItemArtist {
+    font-size: 15px;
+    font-weight: 200;
+    color: white;
+}
+
+.trackItemDuration {
+    font-size: 12px;
+    font-weight: 200;
+    color: white;
+}
+
+.trackItemPlay {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    right: 20px;
+    top: 12.5px;
+}
+
+.trackItemInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+    .trackItem {
+        width: 98%;
+    }
+    .trackItemImage {
+        height: 50px;
+        width: 50px;
+    }
+    .trackItemPlay {
+        height: 40px;
+        width: 40px;
+        top: 5px;
+        right: 5px;
+    }
+    .trackItemTitle {
+        font-size: 15px;
+    }
+    .trackItemArtist {
+        font-size: 12px;
+    }
+    .trackItemDuration {
+        font-size: 10px;
+    }
+}

@@ -14,7 +14,7 @@ const Navbar = () => {
                     <Image src={Logo} alt='Music Finder' className={styles.navbarLogo}/>
                 </Link>
                 <div className={styles.navbarRightSide}>
-                    <NavbarLink linkTo={'categories'} title={'Categories'}/>
+                    <NavbarLink linkTo={'/categories'} title={'Categories'}/>
                     <SearchBar/>
                     <SpotifyLogin/>
                 </div>

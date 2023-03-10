@@ -1,32 +1,32 @@
-import Head from 'next/head'
+import Head from "next/head";
 import Navbar from "@/components/navigation/navbar";
+import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
-import {CategoriesItem} from "@/pages/api/getCategories";
-import CategoriesList from "@/components/categories/categoriesList";
+import {TrackItem} from "@/pages/api/getCategoryItems";
+import Track from "@/components/tracks/trackItem";
 
-export default function Catagories() {
-    const [categories, setCategories] = useState<Array<CategoriesItem>>([]);
-    const [signedIn, setSignedIn] = useState<boolean>(false);
 
+const CategoryId = () => {
+    const router = useRouter();
+    const categoryId = router.query.categoryId as string;
+    const [tracks, setTracks] = useState<Array<TrackItem>>([]);
 
     useEffect(() => {
         const token = window.localStorage.getItem("token") as string;
 
-        setSignedIn(token !== null)
         if (token) {
-            fetch('/api/getCategories', {
+            fetch('/api/getCategoryItems', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
-                    auth: token
+                    auth: token,
+                    id: categoryId
                 }
             }).then(async (res) => {
-                const categoriesArray = (await res.json()).data
-                setCategories(categoriesArray as Array<CategoriesItem>)
+                setTracks((await res.json()).data);
             })
         }
-    },[])
-
+    },[categoryId])
 
     return (
         <>
@@ -38,9 +38,11 @@ export default function Catagories() {
             <main>
                 <>
                     <Navbar/>
-                    {signedIn ?  <CategoriesList items={categories}/> : <h3 style={{textAlign: 'center'}}>Please Log In</h3>}
+                    {tracks.map((track) => <Track track={track} key={track.id}/>)}
                 </>
             </main>
         </>
-    )
+    );
 }
+
+export default CategoryId;
