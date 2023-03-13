@@ -15,6 +15,7 @@ const Navbar = () => {
                 </Link>
                 <div className={styles.navbarRightSide}>
                     <NavbarLink linkTo={'/categories'} title={'Categories'}/>
+					 <NavbarLink linkTo={'homepage'} title={'Home'}/>
                     <SearchBar/>
                     <SpotifyLogin/>
                 </div>
